@@ -33,7 +33,7 @@ export class HomeContentComponent implements OnInit {
       });
   }
 
-  baseUrl: string = 'http://www.omdbapi.com/?apikey=52cd5b50&s=';
+  baseUrl: string = 'https://www.omdbapi.com/?apikey=52cd5b50&s=';
   searchTerm$ = new BehaviorSubject("");
   movies: any[];
   nominations: any[] = [];
