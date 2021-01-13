@@ -145,6 +145,6 @@ app.delete("/api/nominations/:imdbID", checkJwt, (req, res) => {
 });
 
 
-const port = process.env.API_SERVER_PORT || 4200;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Api started on port ${port}`));
