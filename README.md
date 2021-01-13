@@ -1,6 +1,7 @@
 # About this app
 
 This app is used for ShopifyChallegeSummer2021
+Demo : https://agile-journey-60071.herokuapp.com/
 
 ## Requirement
 
