@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="mb-4">
+   <img src="../../../assets/banner.png" alt="banner" class="img-fluid" *ngIf="nominations && nominations.length >= 5">
+  </div>
+  <div class="bg-white px-4 pt-4 mb-4">
+    <h3>The Shoppies</h3>
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" (keyup)="searchTerm$.next($event.target.value)">
+          <div class="input-group-append"><button class="btn btn-primary">
+              <fa-icon [icon]="faSearch" ></fa-icon>
+            </button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-sm-flex justify-content-between">
+    <div class="flex-fill bg-white mr-sm-2 p-4 mb-4 mb-sm-0">
+      <h3>Results <span *ngIf="searchTerm$.value">for "{{searchTerm$.value}}"</span></h3>
+      <span *ngIf="error">{{error}}</span>
+      <ul *ngIf="!error">
+        <li *ngFor="let movie of movies" class="mb-2">
+          {{ movie.Title }} ({{movie.Year}})
+          <button *ngIf="isLogined" type="button" class="btn btn-outline-secondary" (click)="nominate(movie)" [disabled]="!canNominate(movie)">Nominate</button>
+        </li>
+      </ul>
+    </div>
+    <div class="bg-white flex-fill ml-sm-2 p-4" *ngIf="isLogined">
+      <h3>Nominations</h3>
+      <ol>
+        <li *ngFor="let nomination of nominations" class="mb-2">
+          {{ nomination.title }} ({{nomination.yearofrelease}})
+          <button type="button" class="btn btn-outline-danger" (click)="remove(nomination)">Remove</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

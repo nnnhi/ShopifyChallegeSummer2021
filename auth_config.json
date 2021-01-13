@@ -1,0 +1,7 @@
+{
+  "domain": "nnnhi.auth0.com",
+  "clientId": "v4pjzltw7FdT5CzqJeRXbvEl26dI6SnZ",
+  "audience": "https://nnnhi.auth0.com/api/v2/",
+  "apiUri": "https://agile-journey-60071.herokuapp.com",
+  "appUri": "https://agile-journey-60071.herokuapp.com"
+}
